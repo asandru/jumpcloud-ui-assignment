@@ -1,0 +1,28 @@
+{
+  "name": "jumpcloud-ui-assignment",
+  "version": "2.0.0",
+  "description": "A project that can be used to assess front end developers",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TheJumpCloud/jumpcloud-ui-assignment.git"
+  },
+  "private": true,
+  "author": "JumpCloud",
+  "bugs": {
+    "url": "https://github.com/TheJumpCloud/jumpcloud-ui-assignment/issues"
+  },
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "engines": {
+    "node": ">=12.16.1",
+    "npm": ">=6.13.4"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^1.0.6",
+    "unirest": "^0.6.0"
+  }
+}
