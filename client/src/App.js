@@ -214,9 +214,9 @@ function App() {
   // but the complete object that backend created & commited in its database)
   console.log('User was created on the backend. response body: ', responseBody)
 
-  // Automatically trigger a fetch request to get all users
-  // This should refresh the table's contents showing the newly added entry.
-  startFetchingAllUsers()
+  // let's append the newly added user to end of users
+  let tmp = [...users, responseBody] // responseBody is basically the newly added user (as returned by server)
+  setUsers(tmp) // This should refresh the table's contents showing the newly added entry.
 }
 
 const onUserUpdated = (responseBody, errorStatus, errorMessage) => {
@@ -236,8 +236,9 @@ const onUserUpdated = (responseBody, errorStatus, errorMessage) => {
   setCurrentErrorStatus('') // if there was a previous error, wipe it because we now try again
   setCurrentStatus('User has been modified')
 
-  // TODO: Instead of fetching all users and thus wasting network bandwidth,
-  //       we could just fetch the user record we just modified. This way we exercise the GET by userID REST API.
+  // Instead of fetching all users and thus wasting network bandwidth,
+  // we could just use the updated user which is really: responseBody.
+  // But let's just fetch the user record we just modified. This way we exercise the GET by userID REST API.
   getExistingUser(responseBody.id, onUserFetched)
 }
 
