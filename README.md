@@ -12,8 +12,11 @@ After fetching the code from github, open two terminals
 1. ```cd server```
 2. ```npm install```
 3. ```npm start```
+
 and
+
 4. ```cd client```
 5. ```npm install```
 6. ```npm start```
+
 A new web browser tab will be opened with the application.
